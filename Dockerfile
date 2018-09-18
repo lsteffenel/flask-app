@@ -1,6 +1,5 @@
 # our base image
-#FROM alpine:3.5
-FROM alpine:edge
+FROM alpine:latest
 
 # Install python and pip
 RUN apk add --update py2-pip
@@ -17,7 +16,7 @@ COPY app.py /usr/src/app/
 COPY templates/index.html /usr/src/app/templates/
 
 # tell the port number the container should expose
-EXPOSE 5000
+EXPOSE 80
 
 # run the application
 CMD ["python", "/usr/src/app/app.py"]
