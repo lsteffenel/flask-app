@@ -8,7 +8,7 @@ RUN apk add --update py3-pip
 RUN pip install --upgrade pip
 
 # install Python modules needed by the Python app
-RUN pip install --no-cache-dir Flask
+RUN pip install --no-cache-dir Flask==2.3.2
 
 # copy files required for the app to run
 COPY app.py /usr/src/app/
