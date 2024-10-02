@@ -1,14 +1,9 @@
 # our base image
 FROM alpine:latest
 
-# Install python and pip
-RUN apk add --update py3-pip
+# Install python, pip and flask
+RUN apk add --no-cache python3 py3-pip py3-flask
 
-# upgrade pip
-RUN pip install --upgrade pip
-
-# install Python modules needed by the Python app
-RUN pip install --no-cache-dir Flask==2.3.2
 
 # copy files required for the app to run
 COPY app.py /usr/src/app/
